@@ -1,0 +1,25 @@
+version: '3.7'
+networks:
+  mynet:
+          #volumes:
+          # nginxlogs:
+          # tomcatlogs:
+services:
+  web: ## Name of a service. It can be any name of your choice.
+    image: nginx
+    ports:
+      - "80"
+      - "443"
+    volumes:
+      - "/root/nginxlogs:/var/log/nginx"   ## Bind mount volume
+    networks:
+      - mynet
+  app: ## Name of a service. It can be any nae of your choice.
+    image: tomcat
+    ports:
+      - "8080"
+      - "8443"
+    volumes:
+      - "/root/tomcatlogs:/usr/local/tomcat/logs"  ## Bind mount volume
+    networks:
+      - mynet

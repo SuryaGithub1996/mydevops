@@ -1,0 +1,5 @@
+FROM tomcat:latest
+
+RUN mkdir /usr/local/tomcat/webapps/myapp1
+RUN touch /usr/local/tomcat/webapps/myapp1/index.html
+RUN echo "Hi there, This my first docker image build using docker file" > /usr/local/tomcat/webapps/myapp1/index.html
