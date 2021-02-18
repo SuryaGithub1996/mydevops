@@ -1,0 +1,25 @@
+version: '3.7'
+networks:
+  mynet:        #Creating a docker network
+volumes:
+  nginxlogs:    #Creating a docker volume
+  tomcatlogs:   #Creating a docker volume
+services:
+  web: ## Name of a service. It can be any name of your choice.
+    image: nginx
+    ports:
+      - "80"
+      - "443"
+    volumes:
+      - "nginxlogs:/var/log/nginx"
+    networks:
+      - mynet
+  app: ## Name of a service. It can be any nae of your choice.
+    image: tomcat
+    ports:
+      - "8080"
+      - "8443"
+    volumes:
+      - "tomcatlogs:/usr/local/tomcat/logs"
+    networks:
+      - mynet
