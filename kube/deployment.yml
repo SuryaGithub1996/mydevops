@@ -1,0 +1,20 @@
+kind: Deployment
+apiVersion: apps/v1
+metadata:
+  name: mydeployment
+spec:
+  replicas: 4
+  selector:
+    matchLabels:
+      app: mydpapp
+  template:  ## Pod def with metadata and spec 
+    metadata:
+      labels:   ## Mandotary
+        app: mydpapp
+    spec:
+      containers:
+        - name: cont1
+          image: lerndevops/samplepyapp:v1
+          ports:
+            - name: http
+              containerPort: 3000

@@ -1,0 +1,11 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: svc1
+spec:
+  type: ClusterIP
+  selector:
+    app: mydpapp
+  ports:
+    - port: 80
+      targetPort: 3000
