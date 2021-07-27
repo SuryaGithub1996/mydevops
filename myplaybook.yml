@@ -8,4 +8,4 @@
 #         dest: /home/vamsi/mytestdep/
     - name: Create a Deployment
       command: kubectl apply -f /var/lib/jenkins/workspace/deploy/test-sample.yml
-#       become_user: vamsi
+      become_user: suryanarayana
