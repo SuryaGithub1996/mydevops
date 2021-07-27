@@ -1,6 +1,6 @@
 ---
 - hosts: " {{ env }} "
-  become: yes
+#   become: yes
   tasks:
 #     - name: Copy Files
 #       copy:
