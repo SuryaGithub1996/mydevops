@@ -1,0 +1,11 @@
+---
+- hosts: " {{ env }} "
+  become: yes
+  tasks:
+#     - name: Copy Files
+#       copy:
+#         src: /var/lib/jenkins/workspace/deployToQa/deploy/test-sample.yml
+#         dest: /home/vamsi/mytestdep/
+    - name: Create a Deployment
+      command: kubectl apply -f /var/lib/jenkins/workspace/deploy/test-sample.yml
+#       become_user: vamsi
