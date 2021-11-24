@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: samplejavaapp
-        image: suryabh/samplejavaapp:v2.9
+        image: suryabh/samplejavaapp:newtagname
         ports:
         - containerPort: 8080
 
