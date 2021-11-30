@@ -1,2 +1,2 @@
 # mydevops
-branch trigger 1
+branch trigger 2
