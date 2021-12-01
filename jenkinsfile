@@ -1,39 +1,8 @@
- def BRANCH_NAME ;
-def branch_nem = scm.branches[0].name
-if (branch_nem.contains("*/")) {
-    branch_nem = branch_nem.split("\\*/")[1]
-    }
- 
- node {
-     
-  //  environment {
-    env.value = "hello"
-    env.FULL_PATH_BRANCH = "${sh(script:'git branch --show-current', returnStdout: true)}"
-    env.GIT_BRANCH = FULL_PATH_BRANCH.substring(FULL_PATH_BRANCH.lastIndexOf('/') + 1, FULL_PATH_BRANCH.length())
- // }
+node {
 
-    stage('checkout code') {
-
-       // git branch: 'dev', url: 'https://github.com/SuryaGithub1996/mydevops'
-       
-       
-       
-    checkout([$class: 'GitSCM', branches: [[name: '*/dev'], [name: '*/staging']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/SuryaGithub1996/mydevops']]])
-       
- //   sh 'ls -l'
- //   sh 'git branch'
- //   sh 'git rev-parse --abbrev-ref HEAD'
+    stage('test code') {
     
     echo "$env.GIT_BRANCH"
-
-
-    echo "$branch_nem"
-    
-    
-    echo "$env.GIT_BRANCH"
-    echo "$env.FULL_PATH_BRANCH"
-    echo "$env.value"
-    
-    
+   
     }
 }
