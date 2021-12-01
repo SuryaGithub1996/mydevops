@@ -23,8 +23,8 @@ if (branch_nem.contains("*/")) {
     sh 'ls -l'
     sh 'git branch'
     sh 'git rev-parse --abbrev-ref HEAD'
-    sh 'git branch --show-current'
     
+    echo "$env.GIT_BRANCH"
 
 
     echo "$branch_nem"
