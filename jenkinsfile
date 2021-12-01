@@ -1,8 +1,10 @@
+def branchnm = env.GIT_BRANCH
+
 node {
 
     stage('test code') {
     
-    echo "$env.GIT_BRANCH"
+    echo "$branchnm"
    
     }
 }
