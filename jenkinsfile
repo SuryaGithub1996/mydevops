@@ -20,9 +20,9 @@ if (branch_nem.contains("*/")) {
        
     checkout([$class: 'GitSCM', branches: [[name: '*/dev'], [name: '*/staging']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/SuryaGithub1996/mydevops']]])
        
-    sh 'ls -l'
-    sh 'git branch'
-    sh 'git rev-parse --abbrev-ref HEAD'
+ //   sh 'ls -l'
+ //   sh 'git branch'
+ //   sh 'git rev-parse --abbrev-ref HEAD'
     
     echo "$env.GIT_BRANCH"
 
