@@ -1,2 +1,2 @@
 # mydevops
-branch trigger 7
+branch trigger 8
